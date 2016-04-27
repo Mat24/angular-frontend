@@ -1,6 +1,6 @@
 (function () {
     'use strict';
 
-    angular.module('app.libraries', ['ui-router']);
+    angular.module('app.libraries', ['ui.router']);
     
 }());
