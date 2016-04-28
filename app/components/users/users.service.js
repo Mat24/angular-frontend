@@ -20,6 +20,24 @@
                 return error;
             });
         }
+        
+        createUser(user) {
+            return this.$http({
+               method: 'POST',
+                url: 'http://localhost:4000/api/v1/users',
+                data: {
+                    user
+                },
+                headers: {
+                    'Accept' : 'Application/json',
+                    'Content-Type' : 'Application/json'
+                }
+            }).then(function (response) {
+                return response;
+            }).then(function (error) {
+                return error;
+            })
+        }
     }
 
     UsersService.$inject = ['$q', '$http'];

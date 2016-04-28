@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <form name="usersForm">
+        <input type="text"
+        name="first_name"
+        placeholder="first name"
+        ng-model="$ctrl.users.first_name">
+    </form>
+
+    <form name="usersForm">
+        <input type="text"
+               name="last_name"
+               placeholder="last name"
+               ng-model="$ctrl.users.last_name">
+    </form>
+
+    <button ng-click="$ctrl.createUser()">Create User</button>
+</div>
