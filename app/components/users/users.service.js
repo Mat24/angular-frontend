@@ -36,7 +36,22 @@
                 return response;
             }).then(function (error) {
                 return error;
-            })
+            });
+        }
+
+        deleteUser(user) {
+            return this.$http({
+                method: 'DELETE',
+                url: 'http://localhost:4000/api/v1/users/'.concat(user.id),
+                headers: {
+                    'Accept' : 'Application/json',
+                    'Content-Type' : 'Application/json'
+                }
+            }).then(function (response) {
+                return response;
+            }).then(function (error) {
+                return error;
+            });
         }
     }
 

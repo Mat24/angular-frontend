@@ -3,7 +3,7 @@
     
     var users = {
         controller: 'UsersController',
-        controllerAs: 'demon',
+        controllerAs: '$ctrl',
         bindings: {
             usersList: '='
         },

@@ -11,7 +11,7 @@
         // Metodos de la clase
     }*/
 
-    function UsersCreateController($scope, $timeout, UsersService) {
+    function UsersCreateController($scope, $timeout, UsersService, $state) {
         var self = this;
         self.users = {};
 
@@ -20,11 +20,15 @@
 
         // Metodos
         self.createUser = function () {
-            UsersService.createUser(self.users).then(({data}) => self.response = data)
+            UsersService.createUser(self.users).then(({data}) => {
+            self.response = data;
+                $state.go('users');
+            });
+
         }
     }
 
-    UsersCreateController.$inject = ['$scope','$timeout', 'UsersService'];
+    UsersCreateController.$inject = ['$scope','$timeout', 'UsersService', '$state'];
 
     angular.module('app.component.users').controller('UsersCreateController', UsersCreateController);
 
